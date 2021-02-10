@@ -32,28 +32,28 @@
             <div class="card card-3">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Registration Info</h2>
-                    <form method="POST">
-                        <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Name" name="name">
-                        </div>
-                        <div class="input-group">
-                            <input class="input--style-3 js-datepicker" type="text" placeholder="Birthdate" name="birthday">
-                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                        </div>
+                    <h2 class="title">TEMPORARY ALTERNATIVE INSULIN OPTION</h2>
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="gender">
-                                    <option disabled="disabled" selected="selected">Gender</option>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                    <option>Other</option>
+                                <select name="tot_pin_requested" onchange="calculateAmount(this.value)" required>
+                                    <option value="" disabled selected>Select the current insulin</option>
+                                    <option value="1">LEVEMIR</option>
+                                    <option value="2">TRESIIBA</option>
+                                    <option value="3">TOUJEO</option>
+                                    <option value="4">HUMALOG</option>
+                                    <option value="5">APIDRA</option>
+                                    <option value="6">HUMULIN S</option>
+                                    <option value="7">HUMULIN I</option>
+                                    <option value="8">NovoMIX 30</option>
+                                    <option value="9">HUMALOG MIX25</option>
+                                    <option value="10">HUMALOG MIX50</option>
+                                    <option value="11">HUMULIN M3</option>
                                 </select>
                                 <div class="select-dropdown"></div>
                             </div>
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3" type="email" placeholder="Email" name="email">
+                            <input class="input--style-3" type="number" min="0" placeholder="Insulin Dose in units" name="dose">
                         </div>
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="Phone" name="phone">
