@@ -12,15 +12,12 @@
     <!-- Title Page-->
     <title>Out of hours insulin dose calculator</title>
 
-    <!-- Icons font CSS-->
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Vendor CSS-->
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Main CSS-->
     <link href="css/main.css" rel="stylesheet" media="all">
@@ -33,54 +30,68 @@
                 <div class="card-body">
                     <h2 class="title">Out of hours insulin calculator</h2>
                     <form method="POST">
-                           
-                        <div class="input-group">
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="class">
-                                    <option disabled="disabled" selected="selected">Select current insulin</option>
-                                    <option value="1">APIDRA</option>
-                                    <option value="2">HUMALOG</option>
-                                    <option value="3">HUMULIN I</option>
-                                    <option value="0" id="red">-----------------</option>
-                                    <option value="4">HUMULIN S</option>
-                                    <option value="5">HUMALOG MIX25</option>
-                                    <option value="0" id="red">-----------------</option>
-                                    <option value="6">HUMALOG MIX50</option>
-                                    <option value="7">HUMULIN M3</option>
-                                    <option value="8">LEVEMIR</option>
-                                    <option value="9">NovoMIX 30</option>
-                                    <option value="10">TRESIIBA</option>
-                                    <option value="11">TOUJEO</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <input class="input--style-2" type="number" min="1" max="300" placeholder="Dose units" name="res_code">
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select insulin
+                            </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" value="1" href="#">APIDRA</a>
+                                    <a class="dropdown-item" value="2" href="#">HUMALOG</a>
+                                    <a class="dropdown-item" value="3" href="#">HUMULIN I</a>
+                                    <a class="dropdown-item" value="0" id="red" href="#">-----------------</a>
+                                    <a class="dropdown-item" value="4" href="#">HUMULIN S</a>
+                                    <a class="dropdown-item" value="5" href="#">HUMALOG MIX25</a>
+                                    <a class="dropdown-item" value="0" id="red" href="#">-----------------</a>
+                                    <a class="dropdown-item" value="6" href="#">HUMALOG MIX50</a>
+                                    <a class="dropdown-item" value="7" href="#">HUMULIN M3</a>
+                                    <a class="dropdown-item" value="8" href="#">LEVEMIR</a>
+                                    <a class="dropdown-item" value="9" href="#">NovoMIX 30</a>
+                                    <a class="dropdown-item" value="10" href="#">TRESIIBA</a>
+                                    <a class="dropdown-item" value="11" href="#">TOUJEO</a>
                                 </div>
+                        </div>
+                           
+
+                        <!-- <div class="form-group"> -->
+                        <div class="actrapid" hidden>
+                        <div class="col-md-4">
+                            <label for="validationCustom01" class="form-label">Breakfast</label>
+                            <input type="number" min="0" max="300" class="form-control" id="validationCustom01" required>
+                            <div class="invalid-feedback">
+                            Dose must be specified (even if “0”)
                             </div>
                         </div>
-                        <div class="p-t-30">
+                        <div class="col-md-4">
+                            <label for="validationCustom02" class="form-label">Lunch</label>
+                            <input type="number" min="0" max="300" class="form-control" id="validationCustom02" required>
+                            <div class="invalid-feedback">
+                            Dose must be specified (even if “0”)
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom01" class="form-label">Dinner</label>
+                            <input type="number" min="0" max="300" class="form-control" id="validationCustom01" required>
+                            <div class="invalid-feedback">
+                            Dose must be specified (even if “0”)
+                            </div>
+                        </div>
+                        </div>
+                        <br>
                             <button class="btn btn--radius btn--green" type="submit">Display new insulin and dose</button>
                         </div>
+                        </div>
+                            
                     </form>
                 </div>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 
-    <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <!-- Vendor JS-->
-    <script src="vendor/select2/select2.min.js"></script>
-    <script src="vendor/datepicker/moment.min.js"></script>
-    <script src="vendor/datepicker/daterangepicker.js"></script>
 
     <!-- Main JS-->
     <script src="js/global.js"></script>
-
+<!-- 
     <script>
             function calculateAmount(val) {
                 var altInsulin
@@ -115,7 +126,13 @@
                 var divobj = document.getElementById('tot_amount');
                 divobj.value = tot_price;
             }
-        </script>
+        </script> -->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
    
 
