@@ -30,48 +30,49 @@
                 <div class="card-body">
                     <h2 class="title">Out of hours insulin calculator</h2>
                     <form method="POST">
+
                         
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Select insulin
-                            </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" value="1" href="#">APIDRA</a>
-                                    <a class="dropdown-item" value="2" href="#">HUMALOG</a>
-                                    <a class="dropdown-item" value="3" href="#">HUMULIN I</a>
-                                    <a class="dropdown-item" value="0" id="red" href="#">-----------------</a>
-                                    <a class="dropdown-item" value="4" href="#">HUMULIN S</a>
-                                    <a class="dropdown-item" value="5" href="#">HUMALOG MIX25</a>
-                                    <a class="dropdown-item" value="0" id="red" href="#">-----------------</a>
-                                    <a class="dropdown-item" value="6" href="#">HUMALOG MIX50</a>
-                                    <a class="dropdown-item" value="7" href="#">HUMULIN M3</a>
-                                    <a class="dropdown-item" value="8" href="#">LEVEMIR</a>
-                                    <a class="dropdown-item" value="9" href="#">NovoMIX 30</a>
-                                    <a class="dropdown-item" value="10" href="#">TRESIIBA</a>
-                                    <a class="dropdown-item" value="11" href="#">TOUJEO</a>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Select insulin</label>
+                            <select class="form-control" onchange="sInsulin()" id="selectInsulin" >
+                                    <option value="none">None selected</option>
+                                    <option id="apidra">APIDRA</option>
+                                    <option value="2">HUMALOG</option>
+                                    <option value="3">HUMULIN I</option>
+                                    <option value="0" id="red">-----------------</option>
+                                    <option value="4">HUMULIN S</option>
+                                    <option value="5">HUMALOG MIX25</option>
+                                    <option value="0" id="red">-----------------</option>
+                                    <option value="6">HUMALOG MIX50</option>
+                                    <option value="7">HUMULIN M3</option>
+                                    <option value="8">LEVEMIR</option>
+                                    <option value="9">NovoMIX 30</option>
+                                    <option value="10">TRESIIBA</option>
+                                    <option value="11">TOUJEO</option>
+                            </select>
                                 </div>
                         </div>
                            
 
                         <!-- <div class="form-group"> -->
-                        <div class="actrapid" hidden>
+                        <div id="rapid">
                         <div class="col-md-4">
                             <label for="validationCustom01" class="form-label">Breakfast</label>
-                            <input type="number" min="0" max="300" class="form-control" id="validationCustom01" required>
+                            <input type="number" min="0" max="300" class="form-control" id="breakfast" required>
                             <div class="invalid-feedback">
                             Dose must be specified (even if “0”)
                             </div>
                         </div>
                         <div class="col-md-4">
                             <label for="validationCustom02" class="form-label">Lunch</label>
-                            <input type="number" min="0" max="300" class="form-control" id="validationCustom02" required>
+                            <input type="number" min="0" max="300" class="form-control" id="lunch" required>
                             <div class="invalid-feedback">
                             Dose must be specified (even if “0”)
                             </div>
                         </div>
                         <div class="col-md-4">
                             <label for="validationCustom01" class="form-label">Dinner</label>
-                            <input type="number" min="0" max="300" class="form-control" id="validationCustom01" required>
+                            <input type="number" min="0" max="300" class="form-control" id="dinner" required>
                             <div class="invalid-feedback">
                             Dose must be specified (even if “0”)
                             </div>
