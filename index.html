@@ -51,6 +51,7 @@
                                     <option id="toujeo">TOUJEO</option>
                             </select>
                                 </div>
+                                
                         
                         
                         <!-- If long or medium acting insulin selected >>> user forced to choose frequency -->
@@ -66,12 +67,6 @@
                         <input class="form-check-input" type="radio" name="OD" id="OD" value="OD">
                         <label class="form-check-label" for="OD">
                             Once daily PM
-                        </label>
-                        </div>
-                        <div class="form-check" id="BD">
-                        <input class="form-check-input" type="radio" name="BD" id="BD" value="BD">
-                        <label class="form-check-label" for="BD">
-                            Twice daily
                         </label>
                         </div>
                         </div>
@@ -91,7 +86,7 @@
                         </div>
                         </div>
 
-                        <!-- Forces user to select if Twice or Three times daily-->
+                        <!-- Forces user to select if One to Three times daily-->
                         <div class="form-group" id="odTOtd">
                         <label class="col-md-4 control-label" ><b>How frequently?</b></label>
                         <div class="col-md-4">
@@ -122,6 +117,24 @@
                         <div class="col-md-4">
                             <label for="validationCustom02" class="form-label">Lunch</label>
                             <input type="number" min="0" max="50" class="form-control" id="lunch" required>
+                            <div class="invalid-feedback">
+                            Dose must be specified (even if “0”)
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationCustom01" class="form-label">Dinner</label>
+                            <input type="number" min="0" max="50" class="form-control" id="dinner" required>
+                            <div class="invalid-feedback">
+                            Dose must be specified (even if “0”)
+                            </div>
+                        </div>
+                        </div>
+
+                        <!-- If humulin m3 selected >>> user forced to enter mealtimes -->
+                        <div id="humm3">
+                        <div class="col-md-4">
+                            <label for="validationCustom01" class="form-label">Breakfast</label>
+                            <input type="number" min="0" max="50" class="form-control" id="breakfast" required>
                             <div class="invalid-feedback">
                             Dose must be specified (even if “0”)
                             </div>
