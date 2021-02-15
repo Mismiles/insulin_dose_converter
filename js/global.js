@@ -1,10 +1,12 @@
+
+//Function shows particular form fields when insulin is selected// 
+ 
  
  function sInsulin() {
     var rapid = document.getElementById('rapid');
     var midLong = document.getElementById('midLong');
     var humm3 = document.getElementById('humm3');
     var odORbd = document.getElementById('odORbd');
-    var bdORtd = document.getElementById('bdORtd');
     var odTOtd = document.getElementById('odTOtd');
 
     var apidra = document.getElementById("apidra");
@@ -58,4 +60,14 @@
         odORbd.style.display = 'none';
         odTOtd.style.display = 'none';       
     }
+}
+
+//This function is used to scroll the form down when an inulin is selected//
+function scrollWin() {
+ window.scrollBy(0, 300);
+}
+
+function selectInsulin() { 
+    sInsulin();
+    scrollWin();
 }

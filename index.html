@@ -34,7 +34,7 @@
                         
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Select current insulin</label>
-                            <select class="form-control" onchange="sInsulin()" id="selectInsulin" >
+                            <select class="form-control" onchange="selectInsulin()" id="Insulinchoice"
                                     <option value="none">None selected</option>
                                     <option id="apidra">APIDRA</option>
                                     <option id="humalog">HUMALOG</option>
@@ -132,14 +132,14 @@
                         <div id="humm3">
                         <div class="col-md-4">
                             <label for="validationCustom01" class="form-label">Pre Breakfast</label>
-                            <input type="number" min="0" max="50" class="form-control" id="breakfast" required>
+                            <input type="number" min="0" max="80" class="form-control" id="breakfast" required>
                             <div class="invalid-feedback">
                             Dose must be specified (even if “0”)
                             </div>
                         </div>
                         <div class="col-md-4">
                             <label for="validationCustom01" class="form-label">Pre Dinner</label>
-                            <input type="number" min="0" max="50" class="form-control" id="dinner" required>
+                            <input type="number" min="0" max="80" class="form-control" id="dinner" required>
                             <div class="invalid-feedback">
                             Dose must be specified (even if “0”)
                             </div>
