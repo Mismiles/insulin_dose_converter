@@ -29,12 +29,12 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Out of hours insulin calculator</h2>
-                    <form method="POST">
+                    <form id="insulin" method="POST">
 
                         
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Select current insulin</label>
-                            <select class="form-control" onchange="selectInsulin()" id="Insulinchoice">
+                            <select class="form-control" onchange="sInsulin()" id="Insulinchoice">
                                     <option value="none">None selected</option>
                                     <option id="apidra">APIDRA</option>
                                     <option id="humalog">HUMALOG</option>
@@ -51,9 +51,22 @@
                                     <option id="toujeo">TOUJEO</option>
                             </select>
                                 </div>
-                                
-                        
-                        
+
+                        <!-- Forces user to select if Once or Twice daily-->
+                       <div class="form-group" id="odORbd">
+                        <label class="col-md-4 control-label" ><b>Once or Twice daily</b></label>
+                        <div class="col-md-4">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-primary">
+                            <input type="radio" name="options" id="lOD" value="lOD" checked> Once daily
+                        </label>
+                        <label class="btn btn-warning">
+                            <input type="radio" name="options" id="lBD" value="lBD"> Twice daily
+                        </label>
+                        </div>
+                        </div>
+                        </div>
+
                         <!-- If long or medium acting insulin selected >>> user forced to choose frequency -->
                         <div id="midLong">
                         <div class="form-check">
@@ -68,21 +81,6 @@
                         <label class="form-check-label" for="OD">
                             Once daily PM
                         </label>
-                        </div>
-                        </div>
-
-                        <!-- Forces user to select if Once or Twice daily-->
-                       <div class="form-group" id="odORbd">
-                        <label class="col-md-4 control-label" ><b>Once or Twice daily</b></label>
-                        <div class="col-md-4">
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary">
-                            <input type="radio" name="options" id="lOD" value="lOD" checked> Once daily
-                        </label>
-                        <label class="btn btn-warning">
-                            <input type="radio" name="options" id="lBD" value="lBD"> Twice daily
-                        </label>
-                        </div>
                         </div>
                         </div>
 
@@ -107,21 +105,21 @@
                         <div id="rapid">
                         <div class="col-md-4">
                             <label for="validationCustom01" class="form-label">Breakfast</label>
-                            <input type="number" min="0" max="50" class="form-control" id="breakfast" required>
+                            <input type="number" min="0" max="50" class="form-control" id="bf" required>
                             <div class="invalid-feedback">
                             Dose must be specified (even if “0”)
                             </div>
                         </div>
                         <div class="col-md-4">
                             <label for="validationCustom02" class="form-label">Lunch</label>
-                            <input type="number" min="0" max="50" class="form-control" id="lunch" required>
+                            <input type="number" min="0" max="50" class="form-control" id="lnc" required>
                             <div class="invalid-feedback">
                             Dose must be specified (even if “0”)
                             </div>
                         </div>
                         <div class="col-md-4">
                             <label for="validationCustom01" class="form-label">Dinner</label>
-                            <input type="number" min="0" max="50" class="form-control" id="dinner" required>
+                            <input type="number" min="0" max="50" class="form-control" id="dnr" required>
                             <div class="invalid-feedback">
                             Dose must be specified (even if “0”)
                             </div>
@@ -158,13 +156,36 @@
                 </div>
             </div>
         </div>
-    <!-- </div> -->
+
+<section class="col-md-4" id="insulinAdvice">
+<p id="newRegimen" class="text">The new insulin dose is </p>
+<p id="stat_dose" class="text">Prescribe STAT dose of</p>
+<div id="noText">
+<p id="bmi_calc" class="text">The patient's BMI is</p>
+<p id="ibw_text" class="text">The patient's ideal body weight is</p>
+<p id="result_g" class="text">The CrCl =</p>
+</div>
+<p id="main_dose" class="text">Therefore prescribe</p>
+<p id="poor_renal"class="text">Do not wait for the result before giving the next scheduled dose unless CrCl < 10 ml/min
+or the patient is on renal replacement therapy</p>
+<br>
+<p> <font color="blue" weight="bold">***Refresh the page to reuse tool. Do not amend values***</font></p>
+
+<br>
+
+<!-- Explain Button -->
+  <div>
+    <button id="explain" name="exp" type="button" class="btn btn-primary" onclick="displayReasoning(); highlightWtable(); highlightRtable(); explain(); scrollWin();" >Click to show dosing rationale</button>
+  </div>
+</div>
+
+</section>
 
 
-    <!-- Main JS-->
-    <script src="js/global.js"></script>
-<!-- 
-    <script>
+<!-- Main JS-->
+
+
+    <!--     
             function calculateAmount(val) {
                 var altInsulin
                 if (val = 1) {
@@ -199,6 +220,8 @@
                 divobj.value = tot_price;
             }
         </script> -->
+
+<script src="js/global.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
