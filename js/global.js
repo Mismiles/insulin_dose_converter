@@ -19,7 +19,7 @@ var odTOtd = document.getElementById('odTOtd');
 //Function shows particular form fields when insulin is selected// 
  
  
- function sInsulin() {
+ function selectInsulin() {
     var rapid = document.getElementById('rapid');
     var humm3 = document.getElementById('humm3');
     
@@ -84,11 +84,10 @@ function resetFields() {
   document.getElementById("insulin").reset();
 }
 
-// function sInsulin() { 
-//     sInsulin();
-//     scrollWin();
-//     // resetFields();
-// }
+function sInsulin() { 
+    selectInsulin();
+    scrollWin();
+}
 
 //Function to convert insulin doses//
 var inDosebf;
